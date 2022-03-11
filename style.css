@@ -1,0 +1,301 @@
+html {
+    background: url(wallpapers.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    overflow: hidden;
+    /* Hide scrollbars */
+}
+
+img:hover {
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+/* .diamond-grid{
+    margin: 0;
+    width: 100%;
+    /* margin: 150px auto 0; */
+/*} */
+
+.item{
+    width: 230px;
+    height: 230px;
+    transition: 0.5s;
+}
+
+.item img {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 95%;
+    transform: translateY(-50%);
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 800px;
+}
+
+.left,
+.right {
+    width: 23%;
+}
+
+.middle {
+    margin: auto;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/****************************************** TOOGLE SWITCH ****************************************/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ca2222;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white; 
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2ab934;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(55px);
+    -ms-transform: translateX(55px);
+    transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.on {
+    display: none;
+}
+
+.on,
+.off {
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+input:checked+.slider .on {
+    display: block;
+}
+
+input:checked+.slider .off {
+    display: none;
+}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/****************************************** OST PAD ****************************************/
+h1 {
+    color: #fff !important;
+    font-size: 5vw;
+    letter-spacing: 6px;
+}
+
+.pad {
+    /* width: 500px; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    box-shadow: 0 8px 6px -6px black;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    user-select: none;
+
+}
+
+.box:hover {
+    background-color: lighten(#444, 10%);
+    cursor: pointer;
+}
+
+.box:active {
+    background-color: darken(#444, 10%);
+    transform: scale(1.1);
+    transition: all .2s;
+}
+
+.active {
+    background-color: darken(#444, 10%);
+    transform: scale(1.1);
+    transition: all .2s;
+}
+
+.pad-1,
+.pad-2,
+.pad-3
+ {
+    border: 2px solid #2ecc71;
+}
+
+.pad-4,
+.pad-5,
+.pad-6
+{
+    border: 2px solid #FFA500;
+}
+
+.pad-7,
+.pad-8,
+.pad-9{
+    border: 2px solid #1abc9c;
+}
+
+.pad-10,
+.pad-11 {
+    border: 2px solid #8F00FF;
+}
+
+.pad-12 {
+    border: 2px solid #E5446D;
+}
+
+/****************************************** MECHANICS ****************************************/
+.content a{
+    position: relative;
+    text-transform: uppercase;
+    background: url(button_skin.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 5px;
+    color: #004880;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+    width: 50%;
+}
+
+.choosingTeams,
+.redlightGreenlight,
+.honeycomb,
+.tugOfWar,
+.rubberMat,
+.trailer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.trailer.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.trailer video{
+    position: relative;
+    max-width: 900px;
+    outline: none;
+}
+
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    /* filter: invert(1); */
+    max-width: 32px;
+}
+
+@media (max-width: 991px)
+{
+    .trailer video{
+        max-width: 90%;
+    }
+}
+
+/* CENTER ATTRIBUTE */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
